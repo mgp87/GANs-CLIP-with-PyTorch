@@ -7,4 +7,4 @@ This repo contains code from a course on Generative AI talking about GANs, CLIP 
 - In GenAI, the agent hallucinates scenarios where it tests different strategies to find the best one.
 
 ### 2. GAN Training
- ![GAN Training](GAN_Training.png)
+ ![GAN Training](https://github.com/mgp87/GANs-CLIP-with-PyTorch/blob/main/GAN_Training.png)
