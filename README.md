@@ -8,3 +8,6 @@ This repo contains code from a course on Generative AI talking about GANs, CLIP 
 
 ### 2. GAN Training
  ![GAN Training](https://github.com/mgp87/GANs-CLIP-with-PyTorch/blob/main/GAN/GAN_Training.png)
+
+ #### 2.1. Cross Entropy Loss
+    - The loss function used in GANs to measure the difference between the real and fake images by measuring the difference between the two probability distributions.
