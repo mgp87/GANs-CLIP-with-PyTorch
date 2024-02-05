@@ -154,3 +154,23 @@ Substituing gp in the loss function:
 ```math
 min_g max_c [E(c(x)) - E(c(z))] + \lambda E(||\bigtriangledown c(x)||_2 - 1)^2
 ```
+
+##### 2.4.1.2. Convolutions
+
+The convolutional layers are used to extract features from the images, and the fully connected layers are used to classify the images.
+
+***nn.Conv2d:*** Applies a 2D (width and height) convolution over an input signal composed of several input planes.
+
+```math
+(n+2*pad - ks)//stride + 1
+```
+
+***nn.ConvTranspose2d:*** Applies a 2D transposed convolution operator over an input image composed of several input planes.
+
+```math
+(n-1)*stride - 2*pad + ks
+```
+
+Convolutions are really good at detecting patterns in images, and they are also good at detecting patterns in text --> Translation invariant way: the same pattern can be detected in different parts of the image.
+
+Convolution is a grid of numbers that are going to be initialized randomly, and then they are going to be learned during the training process. By positioning the grid of numbers (kernel) in different parts of the image multiplying the values of the kernel by the values of the image, and then summing the results, which is the output of the convolution operation. Depending on the value of the image, it will detect different parts of the image. The deeper the network, the more complex the patterns it can detect.
