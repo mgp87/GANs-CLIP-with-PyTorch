@@ -146,3 +146,7 @@ gp = (||\bigtriangledown c(x)||_2 - 1)^2
 ```math
 x = \alpha * real + (1 - \alpha)*fake
 ```
+
+```math
+min_g max_c [E(c(x)) - E(c(z))] + \lambda E(||\bigtriangledown c(x)||_2 - 1)^2
+```
