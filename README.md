@@ -84,3 +84,6 @@ log(\hat{y_i})
 ```math
 \min_g -[E(log(D(G(z))))]
 ```
+
+- [Basic GAN python script](https://github.com/mgp87/GANs-CLIP-with-PyTorch/blob/main/GAN/basic.py)
+- [Basic GAN notebook](https://github.com/mgp87/GANs-CLIP-with-PyTorch/blob/main/GAN/basic.ipynb)
