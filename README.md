@@ -7,6 +7,8 @@ This repo contains code from a course on Generative AI talking about GANs, CLIP 
 - In GenAI, the agent hallucinates scenarios where it tests different strategies to find the best one.
 
 ### 2. GAN Training
+GAN stands for Generative Adversarial Networks. It is a type of neural network that is used to generate new data that is similar to the training data. It is composed of two networks: the generator and the discriminator.
+
  ![GAN Training](https://github.com/mgp87/GANs-CLIP-with-PyTorch/blob/main/GAN/GAN_Training.png)
 
  #### 2.1. Cross Entropy Loss
