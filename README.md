@@ -20,10 +20,10 @@ This repo contains code from a course on Generative AI talking about GANs, CLIP 
     **Entropy:** number of bits required to represent a randomly selected event from a probability distribution.
         **Skewed distribution** has **lower** entropy.
         **Uniform distribution** has **higher** entropy.
-        $$\`H(X) = -\sum_{i=1}^{n} P(x_i)log(P(x_i))\`$$
+        $$`H(X) = -\sum_{i=1}^{n} P(x_i)log(P(x_i))`$$
 
     **Cross Entropy:** number of bits required to represent an event from one distribution using the probability distribution of another.
         - P = target distribution
         - Q = approximation of P
         - Cross-entropy is the number of extra bits needed to represent an event using Q instead of P.
-        $$\`H(P, Q) = -\sum_{i=1}^{n} P(x_i)log(Q(x_i))\`$$
+        $$`H(P, Q) = -\sum_{i=1}^{n} P(x_i)log(Q(x_i))`$$
