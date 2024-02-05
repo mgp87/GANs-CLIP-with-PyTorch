@@ -136,8 +136,10 @@ This is mandatory for a stable training process when using WLoss ensuring to app
 
 ```math
 min_g max_c [E(c(x)) - E(c(z))] + \lambda gp
-
+```
 where:
+
+```math
 gp = (||\bigtriangledown c(x)||_2 - 1)^2
 x = \alpha * real + (1 - \alpha)*fake
 ```
