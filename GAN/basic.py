@@ -78,24 +78,6 @@ class Discriminator(nn.Module):
     def forward(self, image):
         return self.disc(image)
 
-if __name__ == '__main__':
-    gen = Generator(d_z).to(device)
-    generator_optimizer = torch.optim.Adam(gen.parameters(), lr=learning_rate)
-
-    disc = Discriminator().to(device)
-    discriminator_optimizer = torch.optim.Adam(disc.parameters(), lr=learning_rate)
-
-    print(gen)
-    print(disc)
-
-    x, y = next(iter(dataloader))
-    print(x.shape, y.shape)
-    print(y[:10])
-
-    noise = generator_noise(batch_size, d_z)
-    fake = gen(noise)
-    show(fake)
-
 # Generator Loss
 def generator_loss(loss_func, gen, disc, n, d_z):
     noise = generator_noise(n, d_z)
@@ -117,3 +99,55 @@ def discriminator_loss(loss_func, gen, disc, real, n, d_z):
     disc_real_loss = loss_func(disc_real, real_targets)
     disc_loss = (disc_fake_loss + disc_real_loss)
     return disc_loss
+
+# Training Loop
+# Each step will process 128 images = size of the batch
+
+def training_loop(gen, disc, generator_optimizer, discriminator_optimizer, loss_func, dataloader, epochs, d_z):
+    for epoch in range(epochs):
+        for real, _ in tqdm(dataloader):
+            # Train Discriminator
+            discriminator_optimizer.zero_grad()
+            current_batch_size = len(real) # len(real) = 128 x 1 x 28 x 28
+            real = real.view(current_batch_size, -1).to(device)  # 128 x 784
+            disc_loss = discriminator_loss(loss_func, gen, disc, real, current_batch_size, d_z)
+            disc_loss.backward(retain_graph=True)
+            discriminator_optimizer.step()
+
+            # Train Generator
+            generator_optimizer.zero_grad()
+            gen_loss = generator_loss(loss_func, gen, disc, current_batch_size, d_z)
+            gen_loss.backward(retain_graph=True)
+            generator_optimizer.step()
+
+            # Visualization
+            mean_disc_loss += disc_loss.item() / show_step_interval
+            mean_gen_loss += gen_loss.item() / show_step_interval
+
+            if current_step % show_step_interval == 0:
+                fake_noise = generator_noise(current_batch_size, d_z)
+                fake = gen(fake_noise)
+                show(fake)
+                show(real)
+                print(f"Epoch {epoch}, step {current_step}: Generator loss: {mean_gen_loss}, Discriminator loss: {mean_disc_loss}")
+
+
+if __name__ == '__main__':
+    gen = Generator(d_z).to(device)
+    generator_optimizer = torch.optim.Adam(gen.parameters(), lr=learning_rate)
+
+    disc = Discriminator().to(device)
+    discriminator_optimizer = torch.optim.Adam(disc.parameters(), lr=learning_rate)
+
+    print(gen)
+    print(disc)
+
+    x, y = next(iter(dataloader))
+    print(x.shape, y.shape)
+    print(y[:10])
+
+    noise = generator_noise(batch_size, d_z)
+    fake = gen(noise)
+    show(fake)
+
+    training_loop(gen, disc, generator_optimizer, discriminator_optimizer, loss_func, dataloader, epochs, d_z)
