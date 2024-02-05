@@ -162,13 +162,21 @@ The convolutional layers are used to extract features from the images, and the f
 ***nn.Conv2d:*** Applies a 2D (width and height) convolution over an input signal composed of several input planes. Typically reduces the size of the input.
 
 ```math
-new_width = (old_width + 2*padding - dilation x (kernel_size - 1) // stride + 1 --> Simplified: (n+2*pad - ks)//stride + 1
+new_width = (old_width + 2*padding - dilation x (kernel_size - 1) // stride + 1
+```
+
+```math
+Simplified: (n+2*pad - ks)//stride + 1
 ```
 
 ***nn.ConvTranspose2d:*** Applies a 2D transposed convolution operator over an input image composed of several input planes. Typically increases the size of the input.
 
 ```math
-new_width = (old_width - 1) x stride -2 x pad + dilation x (kernel_size - 1) + output_pad + 1 --> Simplified: (n-1)*stride - 2*pad + ks
+new_width = (old_width - 1) x stride -2 x pad + dilation x (kernel_size - 1) + output_pad + 1
+```
+
+```math
+Simplified: (n-1)*stride - 2*pad + ks
 ```
 
 - pad (padding): The number of pixels to add to each side of the input.
