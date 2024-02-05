@@ -169,7 +169,7 @@ new_width = (old_width + 2*padding - dilation x (kernel_size - 1) // stride + 1
 Simplified: (n+2*pad - ks)//stride + 1
 ```
 
-***nn.ConvTranspose2d:*** Applies a 2D transposed convolution operator over an input image composed of several input planes. Typically increases the size of the input.
+***nn.ConvTranspose2d:*** Applies a 2D transposed convolution operator over an input image composed of several input planes. Typically increases the size of the input. It is almost the opposite of the Conv2d.
 
 ```math
 new_width = (old_width - 1) x stride -2 x pad + dilation x (kernel_size - 1) + output_pad + 1
