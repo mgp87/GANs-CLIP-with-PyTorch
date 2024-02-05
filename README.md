@@ -99,7 +99,7 @@ The WGAN uses the Wasserstein distance (also known as Earth Mover's distance) to
 ##### 2.4.1. Wasserstein Loss
 
 ```math
--1/n\sum_{i=1}^{n} (hat{y_i}{pred_i})
+-1/n\sum_{i=1}^{n} (\hat{y_i}{pred_i})
 ```
 
 **Critic loss:**
