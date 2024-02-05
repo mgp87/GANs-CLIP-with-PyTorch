@@ -89,3 +89,55 @@ log(\hat{y_i})
 - [Basic GAN notebook](https://github.com/mgp87/GANs-CLIP-with-PyTorch/blob/main/GAN/basic.ipynb)
 
 The BCELoss function has the problem of ***Mode Collapse***, where the generator produces the same output for all inputs. This is because the generator is trying to minimize the loss, and the discriminator is trying to maximize it, so the generator ends up stuck in a single mode (peak of distribution).
+
+We can find the ***Flat Gradient*** problem, where the gradients of the generator loss are flat, so the generator is not able to learn from the gradients.
+
+#### 2.4. Wasserstein GAN (WGAN)
+
+The WGAN uses the Wasserstein distance (also known as Earth Mover's distance) to measure the difference between the real and fake images.
+
+##### 2.4.1. Wasserstein Loss
+
+```math
+-1/n\sum_{i=1}^{n} (hat{y_i}{pred_i})
+```
+
+**Critic loss:**
+Critic loss will try to maximize the difference between the real and fake images.
+
+```math
+min_d -[E(D(x)) - E(D(G(z)))]
+```
+
+**Generator loss:**
+Generator loss will try to minimize the difference between the real and fake images.
+
+```math
+min_g -[E(D(G(z)))]
+```
+
+We will have the ***MinMax Game*** again, where the generator tries to minimize the loss, while the discriminator tries to maximize it.
+
+- Wloss helps with mode collapse and vanishing gradient issues becoming more stable than BCELoss.
+- WGAN is more stable and has better convergence properties than the original GAN.
+
+###### 2.4.1.1. Gradient Penalty
+
+The gradient penalty is used to enforce the Lipschitz constraint, which is a condition that ensures the gradients of the discriminator are not too large.
+
+Lipschitz continuous condition is a condition that ensures the gradients of the discriminator are not too large. The norm of the gradients of the discriminator should be 1 or less than 1.
+
+This is mandatory for a stable training process when using WLoss ensuring to approximate Earth Mover's distance the best way possible.
+
+**Condition application:**
+1. Weight clipping: Clip the weights of the discriminator to enforce the Lipschitz constraint after each update (interferes with the learning process of the critic).
+
+2. Gradient penalty: Add a penalty term to the loss function that enforces the Lipschitz constraint without interfering with the learning process of the critic. Regularization term is added to the loss function to ensure the critic satisfies the Lipschitz constraint (1-L continuous). This is the preferred method.
+
+```math
+min_g max_c [E(c(x)) - E(c(z))] + \lambdagp
+
+where:
+gp = (||\bigtriangledownc(x)||_2 - 1)^2
+x = \alpha real + (1 - \alpha)fake
+```
