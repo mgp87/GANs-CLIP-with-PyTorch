@@ -141,5 +141,8 @@ where:
 
 ```math
 gp = (||\bigtriangledown c(x)||_2 - 1)^2
+```
+
+```math
 x = \alpha * real + (1 - \alpha)*fake
 ```
