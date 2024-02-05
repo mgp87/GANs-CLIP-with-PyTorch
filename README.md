@@ -87,3 +87,5 @@ log(\hat{y_i})
 
 - [Basic GAN python script](https://github.com/mgp87/GANs-CLIP-with-PyTorch/blob/main/GAN/basic.py)
 - [Basic GAN notebook](https://github.com/mgp87/GANs-CLIP-with-PyTorch/blob/main/GAN/basic.ipynb)
+
+The BCELoss function has the problem of ***Mode Collapse***, where the generator produces the same output for all inputs. This is because the generator is trying to minimize the loss, and the discriminator is trying to maximize it, so the generator ends up stuck in a single mode (peak of distribution).
