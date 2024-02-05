@@ -56,3 +56,9 @@ log(1 - \hat{y_i})
 ```math
 -1/n * \sum_{i=1}^{n} (logD({x_i}) + log(1-D(G(z^{i}))))
 ```
+
+**MinMax Game:** The generator tries to minimize the loss, while the discriminator tries to maximize it.
+
+```math
+\min_d -[E(logD(x)) + E(log(1-D(G(z))))]
+```
