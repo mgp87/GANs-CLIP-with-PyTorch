@@ -135,9 +135,9 @@ This is mandatory for a stable training process when using WLoss ensuring to app
 2. Gradient penalty: Add a penalty term to the loss function that enforces the Lipschitz constraint without interfering with the learning process of the critic. Regularization term is added to the loss function to ensure the critic satisfies the Lipschitz constraint (1-L continuous). This is the preferred method.
 
 ```math
-min_g max_c [E(c(x)) - E(c(z))] + \lambdagp
+min_g max_c [E(c(x)) - E(c(z))] + \lambda gp
 
 where:
-gp = (||\bigtriangledownc(x)||_2 - 1)^2
-x = \alpha real + (1 - \alpha)fake
+gp = (||\bigtriangledown c(x)||_2 - 1)^2
+x = \alpha * real + (1 - \alpha)*fake
 ```
