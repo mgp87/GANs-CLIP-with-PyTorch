@@ -15,12 +15,12 @@ This repo contains code from a course on Generative AI talking about GANs, CLIP 
     *Info:* number of bits required to encode and transmit an event.
         **Lower probability** events have more info.
         **Higher probability** events have less info.
-        $$\`h(x) = -log(P(x))\`$$
+        $`h(x) = -log(P(x))`$
 
     **Entropy:** number of bits required to represent a randomly selected event from a probability distribution.
         **Skewed distribution** has **lower** entropy.
         **Uniform distribution** has **higher** entropy.
-        math```
+        ```math
         H(X) = -\sum_{i=1}^{n} P(x_i)log(P(x_i))
         ```
 
@@ -28,6 +28,6 @@ This repo contains code from a course on Generative AI talking about GANs, CLIP 
         - P = target distribution
         - Q = approximation of P
         - Cross-entropy is the number of extra bits needed to represent an event using Q instead of P.
-        math```
+        ```math
         H(P, Q) = -\sum_{i=1}^{n} P(x_i)log(Q(x_i))
         ```
