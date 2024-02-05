@@ -16,7 +16,9 @@ This repo contains code from a course on Generative AI talking about GANs, CLIP 
 **Lower probability** events have more info.
 **Higher probability** events have less info.
 
-$`h(x) = -log(P(x))`$
+```math
+$`h(x) = -log(P(x))
+```
 
 **Entropy:** number of bits required to represent a randomly selected event from a probability distribution.
 **Skewed distribution** has **lower** entropy.
