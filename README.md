@@ -1,6 +1,6 @@
 ## Generative AI for image generation: GANs & CLIP with PyTorch
 
-This repo contains code from a course on Generative AI talking about GANs, CLIP with PyTorch. The course is available on Udemy by Javier Ideami.
+This repo contains code from a course on Generative AI talking about GANs, CLIP with PyTorch.
 
 ### 1. Reinforcement Learning
 - RL: Agents that learn to optimize target finding through trial and error by chasing rewards.
