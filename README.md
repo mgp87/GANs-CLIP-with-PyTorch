@@ -36,3 +36,23 @@ H(X) = -\sum_{i=1}^{n} P(x_i)log(P(x_i))
 ```math
 H(P, Q) = -\sum_{i=1}^{n} P(x_i)log(Q(x_i))
 ```
+
+#### 2.2. Discriminator Loss
+
+```math
+BCELoss = -1/n * \sum_{i=1}^{n} [y_i * log(\hat{y_i}) + (1 - y_i) * log(1 - \hat{y_i})]
+```
+
+**When label is 1 (real)
+```math
+log(\hat{y_i})
+```
+
+**When label is 0 (fake)
+```math
+log(1 - \hat{y_i})
+```
+
+```math
+-1/n * \sum_{i=1}^{n} (logD({x_i}) + log(1-D(G(z^{i}))))
+```
