@@ -43,12 +43,12 @@ H(P, Q) = -\sum_{i=1}^{n} P(x_i)log(Q(x_i))
 BCELoss = -1/n * \sum_{i=1}^{n} [y_i * log(\hat{y_i}) + (1 - y_i) * log(1 - \hat{y_i})]
 ```
 
-**When label is 1 (real)**
+**When label is 1 (real):**
 ```math
 log(\hat{y_i})
 ```
 
-**When label is 0 (fake**
+**When label is 0 (fake):**
 ```math
 log(1 - \hat{y_i})
 ```
