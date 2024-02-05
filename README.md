@@ -147,7 +147,9 @@ gp = (||\bigtriangledown c(x)||_2 - 1)^2
 x = \alpha * real + (1 - \alpha)*fake
 ```
 
-Substituing x and gp in the loss function:
+x is an interpolation between the real and fake images.
+
+Substituing gp in the loss function:
 
 ```math
 min_g max_c [E(c(x)) - E(c(z))] + \lambda E(||\bigtriangledown c(x)||_2 - 1)^2
