@@ -17,7 +17,7 @@ This repo contains code from a course on Generative AI talking about GANs, CLIP 
 **Higher probability** events have less info.
 
 ```math
-$`h(x) = -log(P(x))
+h(x) = -log(P(x))
 ```
 
 **Entropy:** number of bits required to represent a randomly selected event from a probability distribution.
