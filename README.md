@@ -155,7 +155,7 @@ Substituing gp in the loss function:
 min_g max_c [E(c(x)) - E(c(z))] + \lambda E(||\bigtriangledown c(x)||_2 - 1)^2
 ```
 
-##### 2.4.1.2. Convolutions
+###### 2.4.1.2. Convolutions
 
 The convolutional layers are used to extract features from the images, and the fully connected layers are used to classify the images.
 
