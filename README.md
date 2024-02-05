@@ -159,7 +159,7 @@ min_g max_c [E(c(x)) - E(c(z))] + \lambda E(||\bigtriangledown c(x)||_2 - 1)^2
 
 The convolutional layers are used to extract features from the images, and the fully connected layers are used to classify the images.
 
-***nn.Conv2d:*** Applies a 2D (width and height) convolution over an input signal composed of several input planes. Typically reduces the size of the input.
+***nn.Conv2d:*** Applies a 2D (width and height) convolution over an input signal composed of several input planes. Typically reduces the size of the input. It will be used in the critic.
 
 ```math
 new_width = (old_width + 2*padding - dilation x (kernel_size - 1) // stride + 1
@@ -169,7 +169,7 @@ new_width = (old_width + 2*padding - dilation x (kernel_size - 1) // stride + 1
 Simplified: (n+2*pad - ks)//stride + 1
 ```
 
-***nn.ConvTranspose2d:*** Applies a 2D transposed convolution operator over an input image composed of several input planes. Typically increases the size of the input. It is almost the opposite of the Conv2d.
+***nn.ConvTranspose2d:*** Applies a 2D transposed convolution operator over an input image composed of several input planes. Typically increases the size of the input. It is almost the opposite of the Conv2d. It will be used in the generator.
 
 ```math
 new_width = (old_width - 1) x stride -2 x pad + dilation x (kernel_size - 1) + output_pad + 1
