@@ -159,18 +159,26 @@ min_g max_c [E(c(x)) - E(c(z))] + \lambda E(||\bigtriangledown c(x)||_2 - 1)^2
 
 The convolutional layers are used to extract features from the images, and the fully connected layers are used to classify the images.
 
-***nn.Conv2d:*** Applies a 2D (width and height) convolution over an input signal composed of several input planes.
+***nn.Conv2d:*** Applies a 2D (width and height) convolution over an input signal composed of several input planes. Typically reduces the size of the input.
 
 ```math
-(n+2*pad - ks)//stride + 1
+new_width = (old_width + 2*padding - dilation x (kernel_size - 1) // stride + 1 --> Simplified: (n+2*pad - ks)//stride + 1
 ```
 
-***nn.ConvTranspose2d:*** Applies a 2D transposed convolution operator over an input image composed of several input planes.
+***nn.ConvTranspose2d:*** Applies a 2D transposed convolution operator over an input image composed of several input planes. Typically increases the size of the input.
 
 ```math
-(n-1)*stride - 2*pad + ks
+new_width = (old_width - 1) x stride -2 x pad + dilation x (kernel_size - 1) + output_pad + 1 --> Simplified: (n-1)*stride - 2*pad + ks
 ```
+
+- pad (padding): The number of pixels to add to each side of the input.
+- stride: The number of pixels to move the kernel at each step.
+- ks (kernel size): The size of the kernel, 3 for a 3x3 kernel.
+- dilation: The number of pixels to skip in the kernel.
+- n: the old width or height of the image.
 
 Convolutions are really good at detecting patterns in images, and they are also good at detecting patterns in text --> Translation invariant way: the same pattern can be detected in different parts of the image.
 
 Convolution is a grid of numbers that are going to be initialized randomly, and then they are going to be learned during the training process. By positioning the grid of numbers (kernel) in different parts of the image multiplying the values of the kernel by the values of the image, and then summing the results, which is the output of the convolution operation. Depending on the value of the image, it will detect different parts of the image. The deeper the network, the more complex the patterns it can detect.
+
+As you apply convolutions, the image size will become smaller. In order to compensate for it, we increase the number of channels
