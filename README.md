@@ -193,6 +193,12 @@ As you apply convolutions, the image size will become smaller. In order to compe
 
 #### 2.5. CLIP: From text to image
 
-CLIP is a model that can understand both text and images. It can be used to generate images from text, and to generate text from images (MultiModal generation).
+CLIP (Contrastive Language-Image Pre-Training) is a model that can understand both text and images. It can be used to generate images from text, and to generate text from images (MultiModal generation).
 
 The CLIP model is a transformer based model combining a vision transformer and a language transformer. It is trained to understand the relationship between images and text.
+
+- [OpenAI article](https://openai.com/research/clip)
+- [CLIP paper](https://arxiv.org/pdf/2103.00020.pdf)
+- [CLIP Model Card](https://github.com/openai/CLIP/blob/main/model-card.md)
+- [CLIP Colab](https://colab.research.google.com/github/openai/clip/blob/master/notebooks/Interacting_with_CLIP.ipynb)
+- [CLIP in OpenAI GitHub](https://github.com/openai/CLIP)
