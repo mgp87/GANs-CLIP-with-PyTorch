@@ -210,3 +210,7 @@ The CLIP model is a transformer based model combining a vision transformer and a
     - comment out line ***"from torch._six import string_classes"***
     - add line ***"string_classes=str"*** above
     - save the file changes
+
+##### 2.5.1. High Level Schema
+
+![MultiModal Generation Model](https://github.com/mgp87/GANs-CLIP-with-PyTorch/blob/main/CLIP_MultiModal/MultiModal_Generation.png)
