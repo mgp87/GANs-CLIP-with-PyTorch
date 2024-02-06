@@ -190,3 +190,9 @@ Convolutions are really good at detecting patterns in images, and they are also 
 Convolution is a grid of numbers that are going to be initialized randomly, and then they are going to be learned during the training process. By positioning the grid of numbers (kernel) in different parts of the image multiplying the values of the kernel by the values of the image, and then summing the results, which is the output of the convolution operation. Depending on the value of the image, it will detect different parts of the image. The deeper the network, the more complex the patterns it can detect.
 
 As you apply convolutions, the image size will become smaller. In order to compensate for it, we increase the number of channels
+
+#### 2.5. CLIP: From text to image
+
+CLIP is a model that can understand both text and images. It can be used to generate images from text, and to generate text from images (MultiModal generation).
+
+The CLIP model is a transformer based model combining a vision transformer and a language transformer. It is trained to understand the relationship between images and text.
