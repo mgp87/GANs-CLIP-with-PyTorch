@@ -201,4 +201,4 @@ The CLIP model is a transformer based model combining a vision transformer and a
 - [CLIP paper](https://arxiv.org/pdf/2103.00020.pdf)
 - [CLIP Model Card](https://github.com/openai/CLIP/blob/main/model-card.md)
 - [CLIP Colab](https://colab.research.google.com/github/openai/clip/blob/master/notebooks/Interacting_with_CLIP.ipynb)
-- [CLIP in OpenAI GitHub](https://github.com/openai/CLIP)
+- [CLIP OpenAI GitHub](https://github.com/openai/CLIP)
