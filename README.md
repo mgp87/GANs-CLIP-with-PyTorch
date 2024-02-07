@@ -205,7 +205,7 @@ The CLIP model is a transformer based model combining a vision transformer and a
 - [Taming Transformers for High-Resolution Image Synthesis](https://arxiv.org/pdf/2012.09841.pdf)
 - [Taming Transformers CompVis repo](https://github.com/CompVis/taming-transformers)
 
-- Solve error when using PyTorch 2 (or use PyTorch 1.9.0 instead):
+- Solve error when using PyTorch 2 (or use PyTorch 1 instead):
     - open ***"taming-transformers/taming/data/utils.py"***
     - comment out line ***"from torch._six import string_classes"***
     - add line ***"string_classes=str"*** above
