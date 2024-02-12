@@ -215,6 +215,9 @@ The CLIP model is a transformer based model combining a vision transformer and a
 
 ![MultiModal Generation Model](https://github.com/mgp87/GANs-CLIP-with-PyTorch/blob/main/CLIP_MultiModal/MultiModal_Generation.png)
 
+- [CLIP + VQGAN Notebook](https://github.com/mgp87/GANs-CLIP-with-PyTorch/blob/main/CLIP_MultiModal/CLIP_MultiModal.ipynb)
+- [CLIP + VQGAN Python code](https://github.com/mgp87/GANs-CLIP-with-PyTorch/blob/main/CLIP_MultiModal/clip_multimodal.py)
+
 #### 2.6 Segmentation + CLIP + Diffusion Models: change parts of a picture from text
 
 1. Inpainting: Mask the area to be changed.
